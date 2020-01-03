@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "558431197171",
+    "firebase_url": "https://login-a9p.firebaseio.com",
+    "project_id": "login-a9p",
+    "storage_bucket": "login-a9p.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558431197171:android:4b3c8d6d93c76ecb5aa486",
+        "android_client_info": {
+          "package_name": "com.example.login_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558431197171-p5qgt0udl14ggoefgsjmd0851n3bln9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTLbRIkQBYyNFxnv9vr5hrTsc7kERgnMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558431197171-p5qgt0udl14ggoefgsjmd0851n3bln9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
