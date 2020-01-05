@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:login_app/services/usermanagement.dart';
-
 import 'loading.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -11,7 +10,9 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   String _email;
+  String name;
   String _password;
+
   bool loading = false;
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,9 @@ class _SignUpPageState extends State<SignUpPage> {
         ? LoadingScreen()
         : Scaffold(
             appBar: AppBar(
-              title: Text("Sign up"),
+              title: Text(
+                "Sign up",
+              ),
               backgroundColor: Colors.red,
             ),
             body: Center(
@@ -28,6 +31,17 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(hintText: 'Name'),
+                      onChanged: (value) {
+                        setState(() {
+                          name = value;
+                        });
+                      },
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
                     TextField(
                       decoration: InputDecoration(hintText: 'Email'),
                       onChanged: (value) {
@@ -55,7 +69,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       color: Colors.red,
                       textColor: Colors.white,
                       elevation: 7.0,
-                      onPressed: () {
+                      onPressed: () async {
                         setState(() {
                           loading = true;
                         });
@@ -64,11 +78,15 @@ class _SignUpPageState extends State<SignUpPage> {
                           email: _email,
                           password: _password,
                         )
-                            .then((signedInUser) {
-                          UserManagement()
-                              .storeNewUser(signedInUser.user, context);
-                        }).catchError((e) {
+                            .then(
+                          (signedInUser) {
+                            UserManagement()
+                                .storeNewUser(signedInUser.user, context, name);
+                          },
+                        ).catchError((e) {
                           print(e);
+                          Navigator.of(context)
+                              .pushReplacementNamed('/landing');
                         });
                       },
                     ),

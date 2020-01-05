@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'loading.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,7 +11,6 @@ class _LoginPageState extends State<LoginPage> {
   String _email;
   String _password;
   bool loading = false;
-
   @override
   Widget build(BuildContext context) {
     return loading
@@ -55,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.red,
                       textColor: Colors.white,
                       elevation: 7.0,
-                      onPressed: () {
+                      onPressed: () async {
                         setState(() {
                           loading = true;
                         });
