@@ -13,6 +13,6 @@ class UserManagement {
   }
 
   // getData() async {
-  //   Firestore.instance.collection('/users').getDocuments();
+  //   return await Firestore.instance.collection('/users').document();
   // }
 }

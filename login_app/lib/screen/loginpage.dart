@@ -27,7 +27,10 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     TextField(
-                      decoration: InputDecoration(hintText: 'Email'),
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        hintText: 'Email',
+                      ),
                       onChanged: (value) {
                         setState(() {
                           _email = value;
@@ -38,6 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 15,
                     ),
                     TextField(
+                      obscureText: true,
                       decoration: InputDecoration(hintText: 'Password'),
                       onChanged: (value) {
                         setState(() {

@@ -43,7 +43,10 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: 15,
                     ),
                     TextField(
-                      decoration: InputDecoration(hintText: 'Email'),
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        hintText: 'Email',
+                      ),
                       onChanged: (value) {
                         setState(() {
                           _email = value;
@@ -54,6 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: 15,
                     ),
                     TextField(
+                      obscureText: true,
                       decoration: InputDecoration(hintText: 'Password'),
                       onChanged: (value) {
                         setState(() {
