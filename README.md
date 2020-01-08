@@ -22,6 +22,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
 }
 apply plugin: 'com.google.gms.google-services'(At the end of this file)
+
+
+defaultconfig{
+multiDexEnabled true
+}
 ```
 #### whenever creating new user 
 ```
